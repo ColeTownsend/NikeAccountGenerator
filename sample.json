@@ -1,0 +1,14 @@
+{
+	"getsmsemail":"",
+	"getsmstoken":"",
+	"nikeaccountname":"",
+	"nikemainemail":"",
+	"useowndomain": false,
+	"nikeaccountpassword":"",
+	"maxaccounts":50,
+	"savetofile":"nikeemails.txt",
+	"maxthreads":10,
+	"proxyfilename":"proxylist.txt",
+	"nikeaccountcountry":"US",
+	"minintervalbetweenrequests": 1
+}
