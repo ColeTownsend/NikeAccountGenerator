@@ -62,22 +62,22 @@ def getnumber():
 	return d.text
 def getcode(number):
 	for i in range(0,8):
-		d=requests.post("http://www.getsmscode.com/do.php",data={"action":"getsms","username":GETSMSEMAIL,"token":GETSMSTOKEN,"pid":"462","mobile":("86"+number)})
+		d=requests.post("http://www.getsmscode.com/do.php",data={"action":"getsms","username":GETSMSEMAIL,"token":GETSMSTOKEN,"pid":"462","mobile":("1"+number)})
 		if "NIKE" in d.text:
 			return d.text
 		print "Not received sms yet on {0}\n".format(number),
 		time.sleep(7)
-	blocknumber("86"+number)
+	blocknumber("1"+number)
 	raise Exception("Not received sms in time")
 def signup(email,NUMBER,name,password,country):
     prox=random.choice(PROXYLIST)
     nam=name.split(' ')
     sess=requests.session()
     sess.headers.update({"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36","Accept":"*/*","Accept-Encoding":"gzip, deflate, br","Accept-Language":"en-US,en;q=0.9,ms;q=0.8"})
-    sess.cookies["CONSUMERCHOICE"]="cn/zh_cn"
-    sess.cookies["NIKE_COMMERCE_COUNTRY"]="CN"
-    sess.cookies["NIKE_COMMERCE_LANG_LOCALE"]="zh_CN"
-    sess.cookies["nike_locale"]="cn/zh_cn"
+    sess.cookies["CONSUMERCHOICE"]="us/en_us"
+    sess.cookies["NIKE_COMMERCE_COUNTRY"]="US"
+    sess.cookies["NIKE_COMMERCE_LANG_LOCALE"]="en_US"
+    sess.cookies["nike_locale"]="us/en_us"
     dob=str(random.randint(1990,1995))+"-"+str(random.randint(10,12))+"-"+str(random.randint(10,28))
     print "Using number: {0}\n".format(NUMBER),
     if country=="US":
